@@ -121,41 +121,41 @@ export const ShowLab = () => {
       <img src="${qrCodeDataURL}" alt="QR Code" style="position: absolute; top: 0; right: 0; width: 80px; height: 80px;" />
 
       <h1 style="margin:0; font-size:18pt; font-weight:bold; color:#1a1a1a;">Family Care Hospital</h1>
-      <h2 style="margin:5px 0 0 0; font-size:13pt; font-weight:bold; color:#b30000; text-transform:uppercase; white-space:pre;">Clinical   Laboratory</h2>
+      <h2 style="margin:5px 0 0 0; font-size:13pt; font-weight:bold; color:#b30000; text-transform:uppercase; white-space:pre;">Clinical Laboratory</h2>
       <p style="margin:5px 0 0 0; font-style:italic; font-size:9pt;">"Determined to serve humanity"</p>
     </div>
     <div style="margin-top:8px; display:grid; grid-template-columns:repeat(2,1fr); font-size:9pt; white-space:pre-wrap; border-bottom: 1px solid #000; padding-bottom: 8px;">
-      <p><strong>MRN : </strong> ${appointment.mrn}</p>
-      <p><strong>Collection  Date : </strong> ${
+      <p><strong>MRN: </strong> ${appointment.mrn}</p>
+      <p><strong>Collection Date: </strong> ${
         labCollectionDate
           ? format(labCollectionDate, "PPP p")
           : new Date().toLocaleDateString()
       }</p>
-      <p><strong>Patient  Name : </strong> ${appointment.name}</p>
-      <p><strong>Reported  Date : </strong> ${
+      <p><strong>Patient Name: </strong> ${appointment.name}</p>
+      <p><strong>Reported Date: </strong> ${
         labReportedDate
           ? format(labReportedDate, "PPP p")
           : new Date().toLocaleDateString()
       }</p>
-      <p><strong>Father's  Name : </strong> ${appointment.fatherName}</p>
-      <p><strong>Location : </strong> ${appointment.labLocated}</p>
-      <p><strong>Age / Sex : </strong> ${appointment.age || "-"} / ${
+      <p><strong>Father's Name: </strong> ${appointment.fatherName}</p>
+      <p><strong>Location: </strong> ${appointment.labLocated}</p>
+      <p><strong>Age/Sex: </strong> ${appointment.age || "-"} / ${
       appointment.sex || "-"
     }</p>
-      <p><strong>Referred  by : </strong> ${
+      <p><strong>Referred by: </strong> ${
         appointment.doctor === "paediatrics"
           ? "Dr. Ejaz Mazari"
           : appointment.doctor === "gynae"
           ? "Dr. Salma Ejaz"
           : appointment.doctor || "-"
       }</p>
-      <p><strong>Phone : </strong> ${appointment.phone || "-"}</p>
-      <p><strong>Consultant : </strong> ${" "}</p>
-      <p><strong>CNIC : </strong> ${appointment.cnic || "-"}</p>
-      <p><strong>Collection  Type : </strong> ${
+      <p><strong>Phone: </strong> ${appointment.phone || "-"}</p>
+      <p><strong>Consultant: </strong> ${" "}</p>
+      <p><strong>CNIC: </strong> ${appointment.cnic || "-"}</p>
+      <p><strong>Collection Type: </strong> ${
         appointment.labLocation === "InHouse" ? "Taken in Lab" : "-"
       }</p>
-      <p><strong>Address : </strong> ${appointment.address || "-"}</p>
+      <p><strong>Address: </strong> ${appointment.address || "-"}</p>
     </div>
   `;
 
@@ -185,7 +185,7 @@ export const ShowLab = () => {
     const cbcHTML = cbcAvailable
       ? `
     <div style="margin-bottom:20px;">
-      <h3 style="margin:0; font-size:12pt; font-weight:bold; text-decoration:underline; white-space:pre;">CBC (Complete Blood Count )</h3>
+      <h3 style="margin:0; font-size:12pt; font-weight:bold; text-decoration:underline; white-space:pre;">CBC (Complete Blood Count)</h3>
       <table style="width:100%; border-collapse:collapse; margin-top:8px; font-size:9pt;">
         <thead>
           <tr style="background-color:#f5f5f5;">
