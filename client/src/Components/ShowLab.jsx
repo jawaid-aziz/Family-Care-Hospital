@@ -264,6 +264,16 @@ export const ShowLab = () => {
         </div>
       `;
         }
+        if (test === "Hemoglobin") {
+          return `
+        <div style="margin-bottom:15px;">
+          <h3 style="margin:0; font-size:11pt; font-weight:bold; text-decoration:underline;">${test}</h3>
+          <p style="margin:4px 0;"><strong>Result:</strong> ${
+            labResults[test] ? `${labResults[test]}g/dL` : "-"
+          }</p>
+        </div>
+      `;
+        }
         return `
         <div style="margin-bottom:15px;">
           <h3 style="margin:0; font-size:11pt; font-weight:bold; text-decoration:underline;">${test}</h3>
@@ -641,7 +651,21 @@ export const ShowLab = () => {
                                 onChange={(e) =>
                                   handleInputChange(test, e.target.value)
                                 }
-                                className="w-40"
+                                className="w-60"
+                              />
+                            </div>
+                          ) : test === "Hemoglobin" ? (
+                            // ✅ HEMOGLOBIN (NUMERIC)
+                            <div className="flex flex-col sm:flex-row gap-2 items-center">
+                              <Label>Result (g/dL):</Label>
+                              <Input
+                                type="number"
+                                placeholder="Enter hemoglobin level"
+                                value={labResults[test] || ""}
+                                onChange={(e) =>
+                                  handleInputChange(test, e.target.value)
+                                }
+                                className="w-60"
                               />
                             </div>
                           ) : (
